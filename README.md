@@ -40,7 +40,7 @@ Quick Start
  
  Add the following dependency to your build.gradle, ensuring you replace 'X.X.X' with the latest version on the button above:
  
- ```java
+ ```
  dependencies {
     compile 'com.beardedhen:androidbootstrap:{X.X.X}'
  }
@@ -267,7 +267,7 @@ Displays a view with dropdown options, supplied by an array of strings.
 Custom styles can be applied to any of the views in this library by creating a class which implements
 BootstrapBrand, and setting it on the View. Please see the sample code of BootstrapButton for more detail.
 
- ```java
+ ```
 
      class CustomBootstrapStyle implements BootstrapBrand {
          // specify desired colors here
