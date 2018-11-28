@@ -5,8 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewParent;
@@ -25,6 +23,9 @@ import com.beardedhen.androidbootstrap.utils.DimenUtils;
 import com.beardedhen.androidbootstrap.utils.ViewUtils;
 
 import java.io.Serializable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * BootstrapButtons are regular buttons styled with BootstrapBrand colors, roundable corners, and an

@@ -1,8 +1,8 @@
 package com.beardedhen.androidbootstrap.api.view;
 
-import android.support.annotation.NonNull;
-
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapHeading;
+
+import androidx.annotation.NonNull;
 
 /**
  * Views which implement this interface change their text size and padding according to the

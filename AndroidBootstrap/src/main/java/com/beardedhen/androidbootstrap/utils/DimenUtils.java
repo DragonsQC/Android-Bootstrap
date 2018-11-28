@@ -2,7 +2,8 @@ package com.beardedhen.androidbootstrap.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.annotation.DimenRes;
+
+import androidx.annotation.DimenRes;
 
 /**
  * Utils class for resolving color resource values.

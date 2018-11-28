@@ -3,8 +3,9 @@ package com.beardedhen.androidbootstrap.utils;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 
 /**
  * Utils class for manipulating Bootstrap colors, and resolving colors from resource values.
@@ -24,7 +25,8 @@ public class ColorUtils {
      * @return a color int
      */
     @SuppressWarnings("deprecation")
-    public static @ColorInt int resolveColor(@ColorRes int color, Context context) {
+    public static @ColorInt
+    int resolveColor(@ColorRes int color, Context context) {
         if (Build.VERSION.SDK_INT >= 23) {
             return context.getResources().getColor(color, context.getTheme());
         }

@@ -1,11 +1,12 @@
 package com.beardedhen.androidbootstrap.api.defaults;
 
 import android.content.Context;
-import android.support.annotation.DimenRes;
 
 import com.beardedhen.androidbootstrap.R;
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapHeading;
 import com.beardedhen.androidbootstrap.utils.DimenUtils;
+
+import androidx.annotation.DimenRes;
 
 /**
  * Bootstrap provides styling for elements H1-H6, and sets their text size and padding using the
@@ -37,7 +38,8 @@ public enum DefaultBootstrapHeading implements BootstrapHeading {
        R.dimen.bootstrap_h6_vert_padding,
        R.dimen.bootstrap_h6_hori_padding);
 
-    private final @DimenRes int textSize;
+    private final @DimenRes
+                           int textSize;
     private final @DimenRes int vertPadding;
     private final @DimenRes int horiPadding;
 

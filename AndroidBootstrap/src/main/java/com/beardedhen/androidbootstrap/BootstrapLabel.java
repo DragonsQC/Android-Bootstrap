@@ -6,7 +6,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapHeading;
@@ -16,6 +15,8 @@ import com.beardedhen.androidbootstrap.api.view.RoundableView;
 import com.beardedhen.androidbootstrap.utils.ViewUtils;
 
 import java.io.Serializable;
+
+import androidx.annotation.NonNull;
 
 /**
  * BootstrapLabels are designed for showing text styled with BootstrapBrands - they should be

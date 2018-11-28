@@ -1,3 +1,8 @@
+##Android-Bootstrap
+修改版 README  
+[Change Log](CHANGELOG.md)
+ 
+--------
 Android-Bootstrap
 =================
 Android Bootstrap is an Android library which provides custom views styled according to the

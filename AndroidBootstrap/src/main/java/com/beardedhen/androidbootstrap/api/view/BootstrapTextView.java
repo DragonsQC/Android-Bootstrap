@@ -1,8 +1,8 @@
 package com.beardedhen.androidbootstrap.api.view;
 
-import android.support.annotation.Nullable;
-
 import com.beardedhen.androidbootstrap.BootstrapText;
+
+import androidx.annotation.Nullable;
 
 /**
  * Views which implement this interface can set their text using BootstrapText

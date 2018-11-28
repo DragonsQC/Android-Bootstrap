@@ -14,7 +14,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
-import android.support.annotation.ColorInt;
 import android.text.TextPaint;
 
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapBrand;
@@ -23,6 +22,8 @@ import com.beardedhen.androidbootstrap.api.defaults.DefaultBootstrapBrand;
 import com.beardedhen.androidbootstrap.api.defaults.ExpandDirection;
 import com.beardedhen.androidbootstrap.utils.ColorUtils;
 import com.beardedhen.androidbootstrap.utils.DimenUtils;
+
+import androidx.annotation.ColorInt;
 
 /**
  * Provides a factory for generating Drawables which are used as the backgrounds for Bootstrap Views.

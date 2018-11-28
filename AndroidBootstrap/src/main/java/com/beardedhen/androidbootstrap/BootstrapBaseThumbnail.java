@@ -10,8 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -24,6 +22,9 @@ import com.beardedhen.androidbootstrap.utils.ColorUtils;
 import com.beardedhen.androidbootstrap.utils.DimenUtils;
 
 import java.io.Serializable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import static android.widget.ImageView.ScaleType.CENTER_CROP;
 
@@ -135,7 +136,8 @@ abstract class BootstrapBaseThumbnail extends ImageView implements BootstrapBran
     /**
      * @return the original Bitmap source that will be drawn as a circular image
      */
-    @Nullable private Bitmap getBitmapForView() {
+    @Nullable
+    private Bitmap getBitmapForView() {
         Drawable drawable = getDrawable();
 
         if (drawable == null) {

@@ -1,11 +1,12 @@
 package com.beardedhen.androidbootstrap.font;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextPaint;
 import android.text.style.TypefaceSpan;
 
 import com.beardedhen.androidbootstrap.TypefaceProvider;
+
+import androidx.annotation.NonNull;
 
 /**
  * A custom span which paints text using the typeface specified by the IconSet passed to the constructor

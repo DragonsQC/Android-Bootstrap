@@ -1,6 +1,6 @@
 package com.beardedhen.androidbootstrap.api.view;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public interface BootstrapBadgeView {
 

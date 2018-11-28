@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.EditText;
@@ -20,6 +19,8 @@ import com.beardedhen.androidbootstrap.utils.DimenUtils;
 import com.beardedhen.androidbootstrap.utils.ViewUtils;
 
 import java.io.Serializable;
+
+import androidx.annotation.NonNull;
 
 /**
  * BootstrapEditText allows users to enter values like a regular Android EditText, and allows coloring

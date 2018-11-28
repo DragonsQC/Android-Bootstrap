@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -23,6 +21,9 @@ import com.beardedhen.androidbootstrap.api.view.RoundableView;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 
 import static com.beardedhen.androidbootstrap.api.attributes.ViewGroupPosition.BOTTOM;
 import static com.beardedhen.androidbootstrap.api.attributes.ViewGroupPosition.END;
@@ -241,7 +242,8 @@ public class BootstrapButtonGroup extends BootstrapGroup implements BootstrapSiz
         }
     }
 
-    @NonNull public ButtonMode getButtonMode() {
+    @NonNull
+    public ButtonMode getButtonMode() {
         return buttonMode;
     }
 

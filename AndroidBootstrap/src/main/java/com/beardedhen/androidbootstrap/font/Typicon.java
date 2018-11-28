@@ -1,11 +1,11 @@
 package com.beardedhen.androidbootstrap.font;
 
-import android.support.annotation.StringDef;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.annotation.StringDef;
 
 /**
  * Maps Typicons Icon Codes to unicode characters, allowing its use in AwesomeTextView.

@@ -3,7 +3,6 @@ package com.beardedhen.androidbootstrap;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -15,6 +14,8 @@ import com.beardedhen.androidbootstrap.api.view.BootstrapBrandView;
 import com.beardedhen.androidbootstrap.api.view.BootstrapSizeView;
 import com.beardedhen.androidbootstrap.utils.DimenUtils;
 import com.beardedhen.androidbootstrap.utils.ViewUtils;
+
+import androidx.annotation.NonNull;
 
 /**
  * See

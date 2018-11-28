@@ -1,9 +1,10 @@
 package com.beardedhen.androidbootstrap.api.attributes;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
 
 import java.io.Serializable;
+
+import androidx.annotation.ColorInt;
 
 /**
  * A Bootstrap Brand is a color which is used universally across many Bootstrap Views. An example is
@@ -19,7 +20,8 @@ public interface BootstrapBrand extends Serializable {
      * @param context the current context
      * @return the color for the current brand
      */
-    @ColorInt int defaultFill(Context context);
+    @ColorInt
+    int defaultFill(Context context);
 
     /**
      * Retrieves the color that should be used for the default border state

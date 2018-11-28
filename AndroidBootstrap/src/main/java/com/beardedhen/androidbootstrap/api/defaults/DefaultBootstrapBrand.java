@@ -1,10 +1,11 @@
 package com.beardedhen.androidbootstrap.api.defaults;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
 
 import com.beardedhen.androidbootstrap.R;
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapBrand;
+
+import androidx.annotation.ColorInt;
 
 import static com.beardedhen.androidbootstrap.utils.ColorUtils.ACTIVE_OPACITY_FACTOR_EDGE;
 import static com.beardedhen.androidbootstrap.utils.ColorUtils.ACTIVE_OPACITY_FACTOR_FILL;
@@ -62,7 +63,8 @@ public enum DefaultBootstrapBrand implements BootstrapBrand {
         }
     }
 
-    @ColorInt public int defaultFill(Context context) {
+    @ColorInt
+    public int defaultFill(Context context) {
         return resolveColor(color, context);
     }
 

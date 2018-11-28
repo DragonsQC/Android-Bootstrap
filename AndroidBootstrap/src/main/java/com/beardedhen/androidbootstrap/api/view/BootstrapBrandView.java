@@ -1,8 +1,8 @@
 package com.beardedhen.androidbootstrap.api.view;
 
-import android.support.annotation.NonNull;
-
 import com.beardedhen.androidbootstrap.api.attributes.BootstrapBrand;
+
+import androidx.annotation.NonNull;
 
 /**
  * Views which implement this interface change their color according to the given Bootstrap Brand

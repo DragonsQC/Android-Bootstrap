@@ -16,8 +16,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
@@ -35,6 +33,9 @@ import com.beardedhen.androidbootstrap.utils.ColorUtils;
 import com.beardedhen.androidbootstrap.utils.DimenUtils;
 
 import java.io.Serializable;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 
 import static android.graphics.Bitmap.Config.ARGB_8888;
 

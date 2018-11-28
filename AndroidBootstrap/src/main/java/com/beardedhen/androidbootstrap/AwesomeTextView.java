@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.animation.AlphaAnimation;
@@ -24,6 +22,9 @@ import com.beardedhen.androidbootstrap.font.MaterialIcons;
 import com.beardedhen.androidbootstrap.font.Typicon;
 
 import java.io.Serializable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * This class extends the default Android TextView to supply Bootstrap behaviour. The text color
@@ -265,7 +266,8 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         updateBootstrapState();
     }
 
-    @Nullable @Override public BootstrapText getBootstrapText() {
+    @Nullable
+    @Override public BootstrapText getBootstrapText() {
         return bootstrapText;
     }
 
