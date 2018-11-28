@@ -1,7 +1,30 @@
 ##Android-Bootstrap
 修改版 README  
 [Change Log](CHANGELOG.md)
- 
+# Quick Start
+[![](https://jitpack.io/v/DragonsQC/Android-Bootstrap.svg)](https://jitpack.io/#DragonsQC/Android-Bootstrap)
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+
+```
+dependencies {
+    compile 'com.github.DragonsQC:Android-Bootstrap:{X.X.X}'
+}
+```
+
 --------
 Android-Bootstrap
 =================
