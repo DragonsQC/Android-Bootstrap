@@ -94,28 +94,24 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
 
             if (typiconOrdinal != -1) {
                 final IconSet typicon = TypefaceProvider.retrieveRegisteredIconSet(Typicon.FONT_PATH, editMode);
-
                 if (!editMode) {
                     setIcon(typicon.iconCodeForAttrIndex(typiconOrdinal), typicon);
                 }
             }
             if (faIconOrdinal != -1) {
                 final IconSet fontAwesome = TypefaceProvider.retrieveRegisteredIconSet(FontAwesome.FONT_PATH, editMode);
-
                 if (!editMode) {
                     setIcon(fontAwesome.iconCodeForAttrIndex(faIconOrdinal), fontAwesome);
                 }
             }
             if (faBrandsIconOrdinal != -1) {
                 final IconSet fontAwesomeBrands = TypefaceProvider.retrieveRegisteredIconSet(FontAwesomeBrands.FONT_PATH, editMode);
-
                 if (!editMode) {
                     setIcon(fontAwesomeBrands.iconCodeForAttrIndex(faBrandsIconOrdinal), fontAwesomeBrands);
                 }
             }
             if (materialIconOrdinal != -1) {
                 final IconSet materialIcons = TypefaceProvider.retrieveRegisteredIconSet(MaterialIcons.FONT_PATH, editMode);
-
                 if (!editMode) {
                     setIcon(materialIcons.iconCodeForAttrIndex(materialIconOrdinal), materialIcons);
                 }
