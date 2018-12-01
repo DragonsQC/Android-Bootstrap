@@ -17,6 +17,7 @@ import com.beardedhen.androidbootstrap.api.defaults.DefaultBootstrapBrand;
 import com.beardedhen.androidbootstrap.api.view.BootstrapBrandView;
 import com.beardedhen.androidbootstrap.api.view.BootstrapTextView;
 import com.beardedhen.androidbootstrap.font.FontAwesome;
+import com.beardedhen.androidbootstrap.font.FontAwesomeBrands;
 import com.beardedhen.androidbootstrap.font.IconSet;
 import com.beardedhen.androidbootstrap.font.MaterialIcons;
 import com.beardedhen.androidbootstrap.font.Typicon;
@@ -82,6 +83,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         try {
             int typeOrdinal = a.getInt(R.styleable.AwesomeTextView_bootstrapBrand, -1);
             int faIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
+            int faBrandsIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
             int typiconOrdinal = a.getInt(R.styleable.AwesomeTextView_typicon, -1);
             int materialIconOrdinal = a.getInt(R.styleable.AwesomeTextView_materialIcon, -1);
 
@@ -102,6 +104,13 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
 
                 if (!editMode) {
                     setIcon(fontAwesome.iconCodeForAttrIndex(faIconOrdinal), fontAwesome);
+                }
+            }
+            if (faBrandsIconOrdinal != -1) {
+                final IconSet fontAwesomeBrands = TypefaceProvider.retrieveRegisteredIconSet(FontAwesomeBrands.FONT_PATH, editMode);
+
+                if (!editMode) {
+                    setIcon(fontAwesomeBrands.iconCodeForAttrIndex(faIconOrdinal), fontAwesomeBrands);
                 }
             }
             if (materialIconOrdinal != -1) {

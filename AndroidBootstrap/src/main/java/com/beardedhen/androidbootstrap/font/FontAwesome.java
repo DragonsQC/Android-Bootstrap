@@ -3520,7 +3520,6 @@ public class FontAwesome implements IconSet {
         ATTR_MAP.put(866, FA_YEN_SIGN);
         ATTR_MAP.put(867, FA_YIN_YANG);
 
-
     }
 
 }

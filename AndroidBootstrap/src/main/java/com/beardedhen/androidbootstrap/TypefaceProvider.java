@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 import com.beardedhen.androidbootstrap.font.FontAwesome;
+import com.beardedhen.androidbootstrap.font.FontAwesomeBrands;
 import com.beardedhen.androidbootstrap.font.IconSet;
 import com.beardedhen.androidbootstrap.font.MaterialIcons;
 import com.beardedhen.androidbootstrap.font.Typicon;
@@ -18,8 +19,8 @@ import java.util.Map;
  */
 public class TypefaceProvider {
 
-    private final static Map<CharSequence, Typeface> TYPEFACE_MAP = new HashMap<>();
-    private final static Map<CharSequence, IconSet> REGISTERED_ICON_SETS = new HashMap<>();
+    private final static Map<CharSequence, Typeface> TYPEFACE_MAP         = new HashMap<>();
+    private final static Map<CharSequence, IconSet>  REGISTERED_ICON_SETS = new HashMap<>();
 
     /**
      * Returns a reference to the requested typeface, creating a new instance if none already exists
@@ -43,11 +44,13 @@ public class TypefaceProvider {
      * application. Currently the default icon sets include FontAwesome and Typicon.
      */
     public static void registerDefaultIconSets() {
-        final FontAwesome fontAwesome = new FontAwesome();
-        final Typicon typicon = new Typicon();
-        final MaterialIcons materialIcons = new MaterialIcons();
+        final FontAwesome       fontAwesome       = new FontAwesome();
+        final FontAwesomeBrands fontAwesomeBrands = new FontAwesomeBrands();
+        final Typicon           typicon           = new Typicon();
+        final MaterialIcons     materialIcons     = new MaterialIcons();
 
         REGISTERED_ICON_SETS.put(fontAwesome.fontPath(), fontAwesome);
+        REGISTERED_ICON_SETS.put(fontAwesomeBrands.fontPath(), fontAwesomeBrands);
         REGISTERED_ICON_SETS.put(typicon.fontPath(), typicon);
         REGISTERED_ICON_SETS.put(materialIcons.fontPath(), materialIcons);
     }

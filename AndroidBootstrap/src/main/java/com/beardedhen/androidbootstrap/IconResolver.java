@@ -3,6 +3,7 @@ package com.beardedhen.androidbootstrap;
 import android.content.Context;
 
 import com.beardedhen.androidbootstrap.font.FontAwesome;
+import com.beardedhen.androidbootstrap.font.FontAwesomeBrands;
 import com.beardedhen.androidbootstrap.font.IconSet;
 import com.beardedhen.androidbootstrap.font.MaterialIcons;
 import com.beardedhen.androidbootstrap.font.Typicon;
@@ -15,9 +16,10 @@ import static com.beardedhen.androidbootstrap.TypefaceProvider.retrieveRegistere
  */
 class IconResolver {
 
-    private static final String REGEX_FONT_AWESOME = "(fa_|fa-)[a-z_0-9]+";
-    private static final String REGEX_TYPICONS = "(ty_|ty-)[a-z_0-9]+";
-    private static final String REGEX_MATERIAL_ICONS = "(md_)[a-z_0-9]+";
+    private static final String REGEX_FONT_AWESOME        = "(fa_|fa-)[a-z_0-9]+";
+    private static final String REGEX_FONT_AWESOME_BRANDS = "(fab_|fab-)[a-z_0-9]+";
+    private static final String REGEX_TYPICONS            = "(ty_|ty-)[a-z_0-9]+";
+    private static final String REGEX_MATERIAL_ICONS      = "(md_)[a-z_0-9]+";
 
     /**
      * Resolves markdown to produce a BootstrapText instance. e.g. "{fa_android}" would be replaced
@@ -31,13 +33,12 @@ class IconResolver {
     static BootstrapText resolveMarkdown(Context context, String markdown, boolean editMode) {
         if (markdown == null) {
             return null;
-        }
-        else { // detect {fa_*} and split into spannable, ignore escaped chars
+        } else { // detect {fa_*} and split into spannable, ignore escaped chars
             BootstrapText.Builder builder = new BootstrapText.Builder(context, editMode);
 
             int lastAddedIndex = 0;
-            int startIndex = -1;
-            int endIndex = -1;
+            int startIndex     = -1;
+            int endIndex       = -1;
 
             for (int i = 0; i < markdown.length(); i++) {
                 char c = markdown.charAt(i);
@@ -49,8 +50,7 @@ class IconResolver {
 
                 if (c == '{') {
                     startIndex = i;
-                }
-                else if (c == '}') {
+                } else if (c == '}') {
                     endIndex = i;
                 }
 
@@ -63,32 +63,31 @@ class IconResolver {
                         if (iconCode.matches(REGEX_FONT_AWESOME)) { // text is FontAwesome code
                             if (editMode) {
                                 builder.addText("?");
-                            }
-                            else {
+                            } else {
                                 builder.addIcon(iconCode, retrieveRegisteredIconSet(FontAwesome.FONT_PATH, false));
                             }
-                        }
-                        else if (iconCode.matches(REGEX_TYPICONS)) {
+                        } else if (iconCode.matches(REGEX_FONT_AWESOME_BRANDS)) {
                             if (editMode) {
                                 builder.addText("?");
+                            } else {
+                                builder.addIcon(iconCode, retrieveRegisteredIconSet(FontAwesomeBrands.FONT_PATH, false));
                             }
-                            else {
+                        } else if (iconCode.matches(REGEX_TYPICONS)) {
+                            if (editMode) {
+                                builder.addText("?");
+                            } else {
                                 builder.addIcon(iconCode, retrieveRegisteredIconSet(Typicon.FONT_PATH, false));
                             }
-                        }
-                        else if(iconCode.matches(REGEX_MATERIAL_ICONS)){
+                        } else if (iconCode.matches(REGEX_MATERIAL_ICONS)) {
                             if (editMode) {
                                 builder.addText("?");
-                            }
-                            else {
+                            } else {
                                 builder.addIcon(iconCode, retrieveRegisteredIconSet(MaterialIcons.FONT_PATH, false));
                             }
-                        }
-                        else {
+                        } else {
                             if (editMode) {
                                 builder.addText("?");
-                            }
-                            else {
+                            } else {
                                 builder.addIcon(iconCode, resolveIconSet(iconCode));
                             }
                         }
@@ -114,7 +113,7 @@ class IconResolver {
 
         for (IconSet set : getRegisteredIconSets()) {
 
-            if (set.fontPath().equals(FontAwesome.FONT_PATH) || set.fontPath().equals(Typicon.FONT_PATH) || set.fontPath().equals(MaterialIcons.FONT_PATH)) {
+            if (set.fontPath().equals(FontAwesome.FONT_PATH) || set.fontPath().equals(FontAwesomeBrands.FONT_PATH) || set.fontPath().equals(Typicon.FONT_PATH) || set.fontPath().equals(MaterialIcons.FONT_PATH)) {
                 continue; // already checked previously, ignore
             }
 
