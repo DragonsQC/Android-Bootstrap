@@ -83,7 +83,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         try {
             int typeOrdinal         = a.getInt(R.styleable.AwesomeTextView_bootstrapBrand, -1);
             int faIconOrdinal       = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
-            int faBrandsIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
+            int faBrandsIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeBrandsIcon, -1);
             int typiconOrdinal      = a.getInt(R.styleable.AwesomeTextView_typicon, -1);
             int materialIconOrdinal = a.getInt(R.styleable.AwesomeTextView_materialIcon, -1);
 
