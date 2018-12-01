@@ -17,7 +17,7 @@ import static com.beardedhen.androidbootstrap.TypefaceProvider.retrieveRegistere
 class IconResolver {
 
     private static final String REGEX_FONT_AWESOME        = "(fa_|fa-)[a-z_0-9]+";
-    private static final String REGEX_FONT_AWESOME_BRANDS = "(fab_|fab-)[a-z_0-9]+";
+    private static final String REGEX_FONT_AWESOME_BRANDS = "(fa_|fa-)[a-z_0-9]+";
     private static final String REGEX_TYPICONS            = "(ty_|ty-)[a-z_0-9]+";
     private static final String REGEX_MATERIAL_ICONS      = "(md_)[a-z_0-9]+";
 
