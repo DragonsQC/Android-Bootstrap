@@ -36,7 +36,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
 
     private static final String TAG = "com.beardedhen.androidbootstrap.AwesomeTextView";
 
-    private BootstrapText bootstrapText;
+    private BootstrapText  bootstrapText;
     private BootstrapBrand bootstrapBrand;
 
     public enum AnimationSpeed {
@@ -78,13 +78,13 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
 
     private void initialise(AttributeSet attrs) {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.AwesomeTextView);
-        String markdownText;
+        String     markdownText;
 
         try {
-            int typeOrdinal = a.getInt(R.styleable.AwesomeTextView_bootstrapBrand, -1);
-            int faIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
+            int typeOrdinal         = a.getInt(R.styleable.AwesomeTextView_bootstrapBrand, -1);
+            int faIconOrdinal       = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
             int faBrandsIconOrdinal = a.getInt(R.styleable.AwesomeTextView_fontAwesomeIcon, -1);
-            int typiconOrdinal = a.getInt(R.styleable.AwesomeTextView_typicon, -1);
+            int typiconOrdinal      = a.getInt(R.styleable.AwesomeTextView_typicon, -1);
             int materialIconOrdinal = a.getInt(R.styleable.AwesomeTextView_materialIcon, -1);
 
             boolean clickable = a.getBoolean(R.styleable.AwesomeTextView_android_clickable, true);
@@ -110,7 +110,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
                 final IconSet fontAwesomeBrands = TypefaceProvider.retrieveRegisteredIconSet(FontAwesomeBrands.FONT_PATH, editMode);
 
                 if (!editMode) {
-                    setIcon(fontAwesomeBrands.iconCodeForAttrIndex(faIconOrdinal), fontAwesomeBrands);
+                    setIcon(fontAwesomeBrands.iconCodeForAttrIndex(faBrandsIconOrdinal), fontAwesomeBrands);
                 }
             }
             if (materialIconOrdinal != -1) {
@@ -126,8 +126,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
 
             int gravity = a.getInt(R.styleable.AwesomeTextView_android_gravity, Gravity.CENTER);
             setGravity(gravity);
-        }
-        finally {
+        } finally {
             a.recycle();
         }
 
@@ -137,7 +136,8 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         updateBootstrapState();
     }
 
-    @Override public Parcelable onSaveInstanceState() {
+    @Override
+    public Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable(TAG, super.onSaveInstanceState());
         bundle.putSerializable(BootstrapTextView.KEY, bootstrapText);
@@ -145,11 +145,12 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         return bundle;
     }
 
-    @Override public void onRestoreInstanceState(Parcelable state) {
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
         if (state instanceof Bundle) {
             Bundle bundle = (Bundle) state;
 
-            Serializable text = bundle.getSerializable(BootstrapTextView.KEY);
+            Serializable text  = bundle.getSerializable(BootstrapTextView.KEY);
             Serializable brand = bundle.getSerializable(BootstrapBrand.KEY);
 
             if (brand instanceof BootstrapBrand) {
@@ -199,8 +200,7 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         //set up the rotation animation
         if (clockwise) {
             rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        }
-        else {
+        } else {
             rotate = new RotateAnimation(360, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         }
 
@@ -233,6 +233,10 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         setBootstrapText(new BootstrapText.Builder(getContext(), isInEditMode()).addFontAwesomeIcon(iconCode).build());
     }
 
+    public void setFontAwesomeBrandsIcon(@FontAwesomeBrands.Icon CharSequence iconCode) {
+        setBootstrapText(new BootstrapText.Builder(getContext(), isInEditMode()).addFontAwesomeBrandsIcon(iconCode).build());
+    }
+
     /**
      * Sets the text to display a MaterialIcon, replacing whatever text is already present.
      * Used to set the text to display a MaterialIcon Icon.
@@ -253,7 +257,8 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
         setBootstrapText(new BootstrapText.Builder(getContext(), isInEditMode()).addTypicon(iconCode).build());
     }
 
-    @Override public void setMarkdownText(String text) {
+    @Override
+    public void setMarkdownText(String text) {
         setBootstrapText(IconResolver.resolveMarkdown(getContext(), text, isInEditMode()));
     }
 
@@ -270,26 +275,32 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
      * Getters/Setters
      */
 
-    @Override public void setBootstrapText(BootstrapText bootstrapText) {
+    @Override
+    public void setBootstrapText(BootstrapText bootstrapText) {
         this.bootstrapText = bootstrapText;
         updateBootstrapState();
     }
 
     @Nullable
-    @Override public BootstrapText getBootstrapText() {
+    @Override
+    public BootstrapText getBootstrapText() {
         return bootstrapText;
     }
 
-    @Override public void setBootstrapBrand(@NonNull BootstrapBrand bootstrapBrand) {
+    @Override
+    public void setBootstrapBrand(@NonNull BootstrapBrand bootstrapBrand) {
         this.bootstrapBrand = bootstrapBrand;
         updateBootstrapState();
     }
 
-    @NonNull @Override public BootstrapBrand getBootstrapBrand() {
+    @NonNull
+    @Override
+    public BootstrapBrand getBootstrapBrand() {
         return bootstrapBrand;
     }
 
-    @Override public void setText(CharSequence text, BufferType type) {
+    @Override
+    public void setText(CharSequence text, BufferType type) {
         super.setText(text, type);
         bootstrapText = null;
     }
@@ -297,9 +308,9 @@ public class AwesomeTextView extends TextView implements BootstrapTextView, Boot
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter);
-        if(!(text!=null && text.length()>0)){
+        if (!(text != null && text.length() > 0)) {
             setVisibility(GONE);
-        }else{
+        } else {
             setVisibility(VISIBLE);
         }
     }

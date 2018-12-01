@@ -6,6 +6,7 @@ import android.text.Spanned;
 
 import com.beardedhen.androidbootstrap.font.AwesomeTypefaceSpan;
 import com.beardedhen.androidbootstrap.font.FontAwesome;
+import com.beardedhen.androidbootstrap.font.FontAwesomeBrands;
 import com.beardedhen.androidbootstrap.font.IconSet;
 import com.beardedhen.androidbootstrap.font.MaterialIcons;
 import com.beardedhen.androidbootstrap.font.Typicon;
@@ -30,9 +31,9 @@ public class BootstrapText extends SpannableString implements Serializable {
      */
     public static class Builder {
 
-        private final StringBuilder sb;
-        private final Context context;
-        private final boolean editMode;
+        private final StringBuilder         sb;
+        private final Context               context;
+        private final boolean               editMode;
         private final Map<Integer, IconSet> fontIndicesMap;
 
         public Builder(Context context) {
@@ -72,6 +73,13 @@ public class BootstrapText extends SpannableString implements Serializable {
             return this;
         }
 
+        public Builder addFontAwesomeBrandsIcon(@FontAwesomeBrands.Icon CharSequence iconCode) {
+            IconSet iconSet = TypefaceProvider.retrieveRegisteredIconSet(FontAwesomeBrands.FONT_PATH, editMode);
+            sb.append(iconSet.unicodeForKey(iconCode.toString().replaceAll("\\-", "_")));
+            fontIndicesMap.put(sb.length(), iconSet);
+            return this;
+        }
+
         /**
          * Appends a Typicon to the BootstrapText under construction
          *
@@ -89,7 +97,7 @@ public class BootstrapText extends SpannableString implements Serializable {
          *
          * @return the updated builder instance
          */
-        public Builder addMaterialIcon( CharSequence iconCode) {
+        public Builder addMaterialIcon(CharSequence iconCode) {
             IconSet iconSet = TypefaceProvider.retrieveRegisteredIconSet(MaterialIcons.FONT_PATH, editMode);
             sb.append(iconSet.unicodeForKey(iconCode.toString().replaceAll("\\-", "_")));
             fontIndicesMap.put(sb.length(), iconSet);
